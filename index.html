@@ -1,7 +1,17 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+<div id="dashboard"></div>
+<script>
+async function loadDashboard() {
+  const res = await fetch('dashboard.json');
+  const data = await res.json();
+  const container = document.getElementById('dashboard');
+  
+  container.innerHTML = `
+    <h2>Recent Commits</h2>
+    <ul>${data.commits.map(c => `<li><a href="${c.url}">${c.message}</a> by ${c.author}</li>`).join('')}</ul>
+    <h2>Open Issues</h2>
+    <ul>${data.issues.map(i => `<li><a href="${i.url}">#${i.number} ${i.title}</a></li>`).join('')}</ul>
+  `;
+}
+loadDashboard();
+setInterval(loadDashboard, 60000); // Refresh every 60 seconds
+</script>
