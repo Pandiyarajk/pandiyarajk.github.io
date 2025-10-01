@@ -1,17 +1,191 @@
-<div id="dashboard"></div>
-<script>
-async function loadDashboard() {
-  const res = await fetch('dashboard.json');
-  const data = await res.json();
-  const container = document.getElementById('dashboard');
-  
-  container.innerHTML = `
-    <h2>Recent Commits</h2>
-    <ul>${data.commits.map(c => `<li><a href="${c.url}">${c.message}</a> by ${c.author}</li>`).join('')}</ul>
-    <h2>Open Issues</h2>
-    <ul>${data.issues.map(i => `<li><a href="${i.url}">#${i.number} ${i.title}</a></li>`).join('')}</ul>
-  `;
-}
-loadDashboard();
-setInterval(loadDashboard, 60000); // Refresh every 60 seconds
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pandiyaraj K | Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      background-color: #0077b5;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 { margin: 0; font-size: 3em; }
+    header p { font-size: 1.2em; margin-top: 10px; }
+
+    /* Section */
+    section {
+      padding: 40px 20px;
+      margin: 20px auto;
+      max-width: 1000px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    section h2 {
+      color: #0077b5;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* About Me badges */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .badge {
+      background:#f0f0f0;
+      padding:8px 15px;
+      border-radius:20px;
+      font-weight: 500;
+    }
+
+    /* Skills / Tech stack */
+    .tech-icons img {
+      height: 50px;
+      margin: 5px;
+    }
+
+    /* Certifications */
+    .certifications {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background:#f8f8f8;
+      padding:10px 15px;
+      border-radius:10px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      min-width: 300px;
+      flex: 1 1 300px;
+    }
+    .cert-card img { height:40px; }
+
+    /* Contact */
+    .contact a img { margin: 5px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #333;
+      color: white;
+      margin-top: 20px;
+    }
+
+    /* Responsive */
+    @media(max-width: 600px){
+      header h1 { font-size: 2em; }
+      .badges { gap: 5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Hero Section -->
+  <header>
+    <h1>Pandiyaraj K</h1>
+    <p>Software Developer | Automation Enthusiast | Tech Advocate</p>
+  </header>
+
+  <!-- About Me -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Passionate software developer with expertise in automation, web, mobile, and cloud technologies. I enjoy learning new languages, developing apps, and building secure, scalable solutions.</p>
+    <div class="badges">
+      <span class="badge">📚 Fundamentals 💯</span>
+      <span class="badge">💻 Learn C# & Python 💯</span>
+      <span class="badge">📱 Android App for IoT</span>
+      <span class="badge">🌐 Web App in Cloud (Azure) 👍</span>
+      <span class="badge">🔐 Security Best Practices 👍</span>
+      <span class="badge">💾 Database Management (MS SQL) 👍</span>
+      <span class="badge">🌉 REST API Development 👍</span>
+      <span class="badge">🌱 Version Control (GitHub) 💯</span>
+      <span class="badge">🔄 Testing (Manual & Automation) 💯</span>
+      <span class="badge">🛠️ Tools (Ranorex, TestComplete)</span>
+      <span class="badge">⚙️ Framework (Selenium, Playwright)</span>
+      <span class="badge">🕸️ Network Analysis (Postman, Fiddler, Wireshark)</span>
+    </div>
+  </section>
+
+  <!-- Skills / Tech Stack -->
+  <section id="skills">
+    <h2>Skills & Technologies</h2>
+    <div class="tech-icons" align="center">
+      <img src="https://skillicons.dev/icons?i=python,csharp,mssql,shell" alt="Languages">
+      <img src="https://skillicons.dev/icons?i=ranorex,testcomplete,postman" alt="Tools">
+      <img src="https://skillicons.dev/icons?i=selenium,playwright,flask" alt="Frameworks">
+      <img src="https://skillicons.dev/icons?i=githubactions" alt="Other">
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="certifications">
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/smartbear/1C4C96" alt="SmartBear"><strong>Automate Manual Testing with TestComplete</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/smartbear/1C4C96" alt="SmartBear"><strong>TestComplete Desktop Automation Engineer</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/smartbear/1C4C96" alt="SmartBear"><strong>TestComplete QA Architect</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman"><strong>API Testing Learning Path Certificate</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman"><strong>Enterprise Admin Path Certificate</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/google/4285F4" alt="Google Cloud"><strong>Google Cloud Data Analytics Certificate</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Purpose Driven Leadership</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Unlocking the Future: IoT</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Wireshark Ninja</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Domain Names and Web Hosting</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/gfg/2f7e2f" alt="GeeksforGeeks"><strong>API Bootcamp</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Git & GitHub Bootcamp</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/badgr/00274d" alt="Badgr"><strong>Postman API Fundamentals</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Arduino UNO Bootcamp</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/udemy/EC5252" alt="Udemy"><strong>Python Complete Course & Flask</strong></div>
+      <div class="cert-card"><img src="https://cdn.simpleicons.org/gfg/2f7e2f" alt="GeeksforGeeks"><strong>Python Course</strong></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact" align="center">
+      <a href="mailto:pandiyarajk@live.com">
+        <img src="https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Outlook">
+      </a>
+      <a href="https://twitter.com/pandiyarajk" target="_blank">
+        <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
+      </a>
+      <a href="https://linkedin.com/in/pandiyaraj-k-49353467" target="_blank">
+        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+      </a>
+      <a href="https://pandiyarajk.github.io/" target="_blank">
+        <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio">
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Pandiyaraj K
+  </footer>
+
+</body>
+</html>
