@@ -3,64 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pandiyaraj K | Developer Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Pandiyaraj K | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
-    /* General Styles */
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
-    }
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f4f4f4; color: #333; scroll-behavior: smooth; }
     a { text-decoration: none; color: inherit; }
 
-    /* Header */
-    header {
-      background-color: #0077b5;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-    header h1 { margin: 0; font-size: 3em; }
-    header p { font-size: 1.2em; margin-top: 10px; }
-
-    /* Section */
-    section {
-      padding: 40px 20px;
-      margin: 20px auto;
-      max-width: 1000px;
-      background-color: white;
-      border-radius: 12px;
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: #0077B5;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      z-index: 1000;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    section h2 {
-      color: #0077b5;
-      margin-bottom: 20px;
+    nav a { color: white; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: #FF5722; }
+
+    /* Header / Hero */
+    header {
+      background: linear-gradient(135deg,#0077B5,#00A4E4);
+      color: white;
       text-align: center;
+      padding: 80px 20px;
     }
+    header h1 { font-size: 3em; margin-bottom: 10px; }
+    header p { font-size: 1.2em; }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    section h2 { color: #0077B5; text-align: center; margin-bottom: 25px; }
 
     /* About Me badges */
     .badges {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       justify-content: center;
       margin-top: 20px;
     }
     .badge {
-      background:#f0f0f0;
-      padding:8px 15px;
-      border-radius:20px;
+      background: #f0f0f0;
+      padding: 8px 15px;
+      border-radius: 25px;
       font-weight: 500;
+      transition: 0.3s;
+      cursor: default;
     }
+    .badge:hover { background: #0077B5; color: white; transform: scale(1.05); }
 
     /* Skills / Tech stack */
-    .tech-icons img {
-      height: 50px;
-      margin: 5px;
-    }
+    .tech-icons { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+    .tech-icons img { height: 50px; transition: transform 0.3s; cursor: pointer; }
+    .tech-icons img:hover { transform: scale(1.2); }
 
     /* Certifications */
     .certifications {
@@ -74,36 +86,43 @@
       align-items: center;
       gap: 10px;
       background:#f8f8f8;
-      padding:10px 15px;
-      border-radius:10px;
-      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      padding:15px 20px;
+      border-radius:12px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
       min-width: 300px;
       flex: 1 1 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
-    .cert-card img { height:40px; }
+    .cert-card img { height: 40px; }
+    .cert-card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.2); }
 
     /* Contact */
-    .contact a img { margin: 5px; }
+    .contact { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 20px; }
+    .contact img { transition: transform 0.3s; cursor: pointer; }
+    .contact img:hover { transform: scale(1.1); }
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #333;
-      color: white;
-      margin-top: 20px;
-    }
+    footer { text-align: center; padding: 15px; background-color: #333; color: white; margin-top: 40px; }
 
     /* Responsive */
     @media(max-width: 600px){
       header h1 { font-size: 2em; }
-      .badges { gap: 5px; }
+      section { padding: 40px 15px; }
+      .badge { padding: 6px 12px; font-size: 0.9em; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Hero Section -->
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
   <header>
     <h1>Pandiyaraj K</h1>
     <p>Software Developer | Automation Enthusiast | Tech Advocate</p>
@@ -129,10 +148,10 @@
     </div>
   </section>
 
-  <!-- Skills / Tech Stack -->
+  <!-- Skills -->
   <section id="skills">
     <h2>Skills & Technologies</h2>
-    <div class="tech-icons" align="center">
+    <div class="tech-icons">
       <img src="https://skillicons.dev/icons?i=python,csharp,mssql,shell" alt="Languages">
       <img src="https://skillicons.dev/icons?i=ranorex,testcomplete,postman" alt="Tools">
       <img src="https://skillicons.dev/icons?i=selenium,playwright,flask" alt="Frameworks">
@@ -166,19 +185,11 @@
   <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
-    <div class="contact" align="center">
-      <a href="mailto:pandiyarajk@live.com">
-        <img src="https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Outlook">
-      </a>
-      <a href="https://twitter.com/pandiyarajk" target="_blank">
-        <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
-      </a>
-      <a href="https://linkedin.com/in/pandiyaraj-k-49353467" target="_blank">
-        <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-      </a>
-      <a href="https://pandiyarajk.github.io/" target="_blank">
-        <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio">
-      </a>
+    <div class="contact">
+      <a href="mailto:pandiyarajk@live.com"><img src="https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Outlook"></a>
+      <a href="https://twitter.com/pandiyarajk" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
+      <a href="https://linkedin.com/in/pandiyaraj-k-49353467" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+      <a href="https://pandiyarajk.github.io/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio"></a>
     </div>
   </section>
 
