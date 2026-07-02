@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pandiyaraj Karuppasamy | Software Developer Portfolio</title>
+  <title>Pandiyaraj Karuppasamy | Automation Test Lead · Python & C# Developer</title>
+  <meta name="description" content="Automation Test Lead with 15+ years in software engineering and test automation. Python and C# developer, author of 7 PyPI packages and 4 engineering courses.">
   <style>
     * {
       margin: 0;
@@ -11,504 +12,381 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --accent: #2563eb;
+      --accent-dark: #1e40af;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e5e7eb;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* Animated background particles */
-    .particles {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 50%;
-      animation: float 15s infinite;
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
-      10% { opacity: 1; }
-      90% { opacity: 1; }
-      100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
-    }
-
-    /* Container */
     .container {
-      max-width: 1200px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
+      padding: 24px 20px 60px;
     }
 
-    /* Header Section */
+    /* Header */
     .header {
-      text-align: center;
-      padding: 60px 20px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      animation: fadeInDown 1s ease-out;
+      padding: 48px 0 32px;
+      border-bottom: 3px solid var(--accent);
+      margin-bottom: 40px;
     }
 
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .header h1 {
+      font-size: 2.2em;
+      margin-bottom: 8px;
     }
 
-    .profile-counter {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 25px;
-      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    .header .tagline {
+      font-size: 1.15em;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 16px;
     }
 
-    .profile-counter img {
-      vertical-align: middle;
+    .header .intro {
+      max-width: 760px;
+      color: var(--text);
     }
 
-    .typing-animation {
-      font-size: 2.5em;
-      font-weight: bold;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 20px 0;
-      animation: fadeIn 2s ease-out;
+    .header .meta {
+      margin-top: 16px;
+      color: var(--text-muted);
+      font-size: 0.95em;
     }
 
-    .welcome-banner {
-      margin: 20px 0;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    .header .meta a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    .welcome-banner img {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
+    .header .meta a:hover {
+      text-decoration: underline;
     }
 
-    /* Content Sections */
+    /* Sections */
     .section {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 40px;
-      margin-bottom: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(10px);
-      animation: fadeInUp 1s ease-out;
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      margin-bottom: 44px;
     }
 
     .section h2 {
-      font-size: 2em;
-      margin-bottom: 25px;
-      color: #667eea;
-      border-bottom: 3px solid #764ba2;
-      padding-bottom: 10px;
-      display: inline-block;
+      font-size: 1.4em;
+      margin-bottom: 18px;
+      color: var(--accent-dark);
     }
 
-    .intro-text {
-      font-size: 1.2em;
-      line-height: 1.8;
-      color: #555;
-      padding: 20px;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-      border-radius: 15px;
-      border-left: 5px solid #667eea;
+    /* Numbers */
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
     }
 
-    /* GitHub Stats */
-    .stats-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .stat-card {
-      background: white;
-      padding: 15px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
-    }
-
-    .stat-card img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+    .number-card {
+      background: var(--card);
+      border: 1px solid var(--border);
       border-radius: 10px;
+      padding: 18px 16px;
+      text-align: center;
     }
 
-    /* Tech Stack */
-    .tech-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
+    .number-card .value {
+      font-size: 1.6em;
+      font-weight: 700;
+      color: var(--accent);
     }
 
-    .tech-item {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .number-card .label {
+      font-size: 0.85em;
+      color: var(--text-muted);
+      margin-top: 4px;
     }
 
-    .tech-item:hover {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+    /* Project cards */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
     }
 
-    .tech-item img {
-      display: block;
-      max-width: 100%;
-      height: auto;
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
     }
 
-    /* Contact Section */
+    .project-card:hover {
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .project-card h3 {
+      font-size: 1.05em;
+      margin-bottom: 6px;
+    }
+
+    .project-card h3 a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .project-card h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .project-card p {
+      font-size: 0.92em;
+      color: var(--text-muted);
+    }
+
+    /* Lists */
+    .plain-list {
+      list-style: none;
+    }
+
+    .plain-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95em;
+    }
+
+    .plain-list li:last-child {
+      border-bottom: none;
+    }
+
+    .plain-list a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .plain-list a:hover {
+      text-decoration: underline;
+    }
+
+    .plain-list .desc {
+      color: var(--text-muted);
+    }
+
+    .plain-list img {
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    /* Tech stack */
+    .stack-row {
+      margin-bottom: 8px;
+      font-size: 0.95em;
+    }
+
+    .stack-row strong {
+      color: var(--accent-dark);
+    }
+
+    /* Contact */
     .contact-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-
-    .contact-link {
-      text-decoration: none;
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
-
-    .contact-link:hover {
-      transform: translateY(-5px) scale(1.05);
+      gap: 12px;
     }
 
     .contact-link img {
       display: block;
-      height: 45px;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      height: 36px;
+      border-radius: 6px;
     }
 
-    /* Snake Animation */
-    .snake-container {
-      text-align: center;
-      margin-top: 30px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.5);
-      border-radius: 15px;
+    .contact-link {
+      transition: transform 0.2s ease;
     }
 
-    .snake-container h3 {
-      font-size: 1.5em;
-      color: #667eea;
-      margin-bottom: 20px;
-    }
-
-    .snake-container img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
+    .contact-link:hover {
+      transform: translateY(-2px);
     }
 
     /* Footer */
     .footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      margin-top: 30px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9em;
     }
 
-    .footer p {
-      font-size: 1.1em;
-      color: #555;
-      line-height: 1.8;
-    }
-
-    /* Emoji styling */
-    .emoji {
-      font-size: 1.2em;
-      display: inline-block;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .typing-animation {
-        font-size: 1.8em;
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.7em;
       }
 
-      .section {
-        padding: 25px;
-      }
-
-      .section h2 {
-        font-size: 1.5em;
-      }
-
-      .intro-text {
+      .header .tagline {
         font-size: 1em;
       }
-
-      .stats-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    /* Loading animation */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .fade-in {
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    /* Skill badges */
-    .skill-badge {
-      display: inline-block;
-      padding: 8px 16px;
-      margin: 5px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 20px;
-      font-size: 0.9em;
-      font-weight: 500;
-      box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
-      transition: transform 0.3s ease;
-    }
-
-    .skill-badge:hover {
-      transform: scale(1.1);
     }
   </style>
 </head>
 <body>
-  <!-- Animated particles background -->
-  <div class="particles" id="particles"></div>
-
   <div class="container">
-    <!-- Header Section -->
+
     <header class="header">
-      <div class="profile-counter">
-        <img src="https://komarev.com/ghpvc/?username=Pandiyarajk&color=blue" alt="Profile Views">
-      </div>
-      
-      <div class="typing-animation">
-        <h1>Hi There! <span class="emoji">👋</span></h1>
-        <h1>I'm Pandiyaraj Karuppasamy!</h1>
-      </div>
-      
-      <div class="welcome-banner">
-        <img src="https://capsule-render.vercel.app/api?text=Welcome%20to%20My%20GitHub!&animation=fadeIn&type=waving&color=gradient&height=100" alt="Welcome Banner">
+      <h1>Pandiyaraj Karuppasamy</h1>
+      <div class="tagline">Automation Test Lead · 15+ years in software engineering &amp; test automation · Python | C# · AI-assisted development</div>
+      <p class="intro">
+        I lead test automation and engineering teams in the physical security / access control industry,
+        building the frameworks, CI/CD pipelines, and developer tooling that ship real products.
+        I publish production tools as open source on PyPI, and I teach — my courses on GitHub Actions,
+        prompt engineering, and context engineering are written for working QA and development engineers.
+      </p>
+      <div class="meta">
+        📍 Chennai, India ·
+        📫 <a href="mailto:pandiyarajk@live.com">pandiyarajk@live.com</a> ·
+        💻 <a href="https://github.com/Pandiyarajk" target="_blank" rel="noopener">github.com/Pandiyarajk</a> ·
+        💼 <a href="https://linkedin.com/in/pandiyaraj-k-49353467" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </header>
 
-    <!-- Introduction Section -->
     <section class="section">
-      <h2>About Me</h2>
-      <div class="intro-text">
-        I am passionate about building automation, web services, real-time systems - often with Python and modern frameworks. 
-        I love creating innovative solutions that solve real-world problems and continuously learning new technologies.
+      <h2>By the numbers</h2>
+      <div class="numbers">
+        <div class="number-card">
+          <div class="value">15+</div>
+          <div class="label">Years in software engineering &amp; test automation</div>
+        </div>
+        <div class="number-card">
+          <div class="value">15,500+</div>
+          <div class="label">GitHub contributions in the last 12 months</div>
+        </div>
+        <div class="number-card">
+          <div class="value">7</div>
+          <div class="label">Python packages published on PyPI</div>
+        </div>
+        <div class="number-card">
+          <div class="value">70+</div>
+          <div class="label">Public repositories</div>
+        </div>
+        <div class="number-card">
+          <div class="value">4</div>
+          <div class="label">Full-length courses authored</div>
+        </div>
       </div>
     </section>
 
-    <!-- GitHub Stats Section -->
     <section class="section">
-      <h2>📊 GitHub Stats</h2>
-      <div class="stats-container">
-        <div class="stat-card">
-          <img src="https://github-readme-streak-stats-salesp07.vercel.app/?user=Pandiyarajk&count_private=true&theme=react&border_radius=10" alt="GitHub Streak Stats">
+      <h2>🚀 Featured projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3><a href="https://github.com/Pandiyarajk/github-actions-course" target="_blank" rel="noopener">github-actions-course</a></h3>
+          <p>20-module GitHub Actions course from your first workflow file to production QA automation — labs, capstones, secure pipelines, matrix builds, Docker, and release automation.</p>
         </div>
-        <div class="stat-card">
-          <img src="https://github-readme-stats.vercel.app/api?username=Pandiyarajk&show=prs_merged,prs_merged_percentage,discussions_started,discussions_answered&hide=stars,contribs&show_icons=true" alt="GitHub Stats">
+        <div class="project-card">
+          <h3><a href="https://github.com/Pandiyarajk/prompt-engineering" target="_blank" rel="noopener">prompt-engineering</a></h3>
+          <p>Prompt engineering course built for automation testers, manual QA engineers, and developers — generate test cases, automation code, bug reports, and AI agents that actually help.</p>
         </div>
-        <div class="stat-card">
-          <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pandiyarajk&layout=compact&hide=stars&theme=transparent" alt="Top Languages">
+        <div class="project-card">
+          <h3><a href="https://github.com/Pandiyarajk/context-engineering" target="_blank" rel="noopener">context-engineering</a></h3>
+          <p>6-week beginner program on context engineering for LLMs: context windows, RAG systems, memory, multi-agent architectures, and production patterns.</p>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/Pandiyarajk/crypto_course" target="_blank" rel="noopener">crypto_course</a></h3>
+          <p>Hands-on cryptography course where you build a working CLI toolkit in Python — SHA-256 hashing, AES, RSA, and bcrypt password security, with the theory behind each.</p>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/Pandiyarajk/winscp_tools" target="_blank" rel="noopener">winscp_tools</a></h3>
+          <p>Python SFTP/WinSCP manager with GUI and console interfaces, large-file transfers with progress tracking, and a persistent task scheduler for automated file operations.</p>
+        </div>
+        <div class="project-card">
+          <h3><a href="https://github.com/Pandiyarajk/allure-report-analyzer" target="_blank" rel="noopener">allure-report-analyzer</a></h3>
+          <p>PyPI-published CLI that extracts execution statistics, timing, and pass-rate analytics from Allure test reports — built for real CI test suites.</p>
         </div>
       </div>
     </section>
 
-    <!-- Tech Stack Section -->
     <section class="section">
-      <h2>🛠️ Tech Stack & Interests</h2>
-      
-      <div class="tech-grid">
-        <div class="tech-item">
-          <img src="https://skillicons.dev/icons?i=cs,python" alt="C# and Python">
-        </div>
-        <div class="tech-item">
-          <img src="https://skillicons.dev/icons?i=postman,flask,selenium" alt="Postman, Flask, Selenium">
-        </div>
-        <div class="tech-item">
-          <img src="https://skillicons.dev/icons?i=jenkins,github,githubactions" alt="Jenkins, GitHub, GitHub Actions">
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 30px;">
-        <img src="https://img.shields.io/badge/Behave%20(BDD)-43B02A?style=for-the-badge&logo=python&logoColor=white" alt="Behave BDD" style="margin: 5px;">
-        <img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="Microsoft SQL Server" style="margin: 5px;">
-        <img src="https://img.shields.io/badge/Ranorex-CC0000?style=for-the-badge&logo=ranorex&logoColor=white" alt="Ranorex" style="margin: 5px;">
-        <img src="https://img.shields.io/badge/TestComplete-1C4C96?style=for-the-badge&logo=smartbear&logoColor=white" alt="TestComplete" style="margin: 5px;">
-      </div>
+      <h2>📦 Open source on PyPI</h2>
+      <ul class="plain-list">
+        <li><a href="https://pypi.org/project/powerlogger/" target="_blank" rel="noopener">powerlogger</a><img src="https://img.shields.io/pypi/v/powerlogger" alt="PyPI version"> — <span class="desc">high-performance, thread-safe logging with Rich console output and file rotation</span></li>
+        <li><a href="https://pypi.org/project/logwatchdog/" target="_blank" rel="noopener">logwatchdog</a><img src="https://img.shields.io/pypi/v/logwatchdog" alt="PyPI version"> — <span class="desc">real-time Windows log monitoring with notifications and automated log management</span></li>
+        <li><a href="https://pypi.org/project/allure-report-analyzer/" target="_blank" rel="noopener">allure-report-analyzer</a><img src="https://img.shields.io/pypi/v/allure-report-analyzer" alt="PyPI version"> — <span class="desc">test execution analytics from Allure HTML reports</span></li>
+        <li><a href="https://pypi.org/project/function-diff/" target="_blank" rel="noopener">function-diff</a><img src="https://img.shields.io/pypi/v/function-diff" alt="PyPI version"> — <span class="desc">function-level diff of Python files between Git refs</span></li>
+        <li><a href="https://pypi.org/project/teams-webhook/" target="_blank" rel="noopener">teams-webhook</a><img src="https://img.shields.io/pypi/v/teams-webhook" alt="PyPI version"> — <span class="desc">send messages to Microsoft Teams via webhooks</span></li>
+        <li><a href="https://pypi.org/project/browseversa/" target="_blank" rel="noopener">browseversa</a><img src="https://img.shields.io/pypi/v/browseversa" alt="PyPI version"> — <span class="desc">detect installed browsers and versions on Windows</span></li>
+        <li><a href="https://pypi.org/project/pyautoscan/" target="_blank" rel="noopener">pyautoscan</a><img src="https://img.shields.io/pypi/v/pyautoscan" alt="PyPI version"> — <span class="desc">Windows scanner/printer automation using WIA</span></li>
+      </ul>
     </section>
 
-    <!-- Contact Section -->
+    <section class="section">
+      <h2>🧪 Test automation &amp; QA engineering</h2>
+      <ul class="plain-list">
+        <li><a href="https://github.com/Pandiyarajk/playwright_bdd_framework" target="_blank" rel="noopener">playwright_bdd_framework</a> / <a href="https://github.com/Pandiyarajk/python_bdd_template" target="_blank" rel="noopener">python_bdd_template</a> — <span class="desc">BDD automation framework templates (Playwright, Behave)</span></li>
+        <li><a href="https://github.com/Pandiyarajk/jira-ticket-updater" target="_blank" rel="noopener">jira-ticket-updater</a> — <span class="desc">Jira workflow transitions, field updates, and comments from automation pipelines</span></li>
+        <li><a href="https://github.com/Pandiyarajk/download_chrome_driver" target="_blank" rel="noopener">download_chrome_driver</a> — <span class="desc">auto-detects installed Chrome and fetches the matching ChromeDriver</span></li>
+      </ul>
+      <p style="margin-top: 12px; color: var(--text-muted); font-size: 0.92em;">
+        Daily drivers: Selenium, Playwright, Behave (BDD), TestComplete, Ranorex, Allure, Zephyr Scale, Jira, Jenkins, GitHub Actions.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>🤖 AI-assisted engineering</h2>
+      <ul class="plain-list">
+        <li><a href="https://github.com/Pandiyarajk/ai_codereview" target="_blank" rel="noopener">ai_codereview</a> — <span class="desc">AI-assisted code review automation</span></li>
+        <li><a href="https://github.com/Pandiyarajk/llm-chat-extension" target="_blank" rel="noopener">llm-chat-extension</a> — <span class="desc">Chrome extension that brings any LLM API (OpenAI, Anthropic, local models) into every tab</span></li>
+        <li><a href="https://github.com/Pandiyarajk/mindtrack" target="_blank" rel="noopener">mindtrack</a> — <span class="desc">AI note-taking that extracts action items, priorities, and progress automatically</span></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>🎓 Teaching &amp; community</h2>
+      <ul class="plain-list">
+        <li><a href="https://github.com/Pandiyarajk/python_trainer" target="_blank" rel="noopener">python_trainer</a> — <span class="desc">Python 3 from zero to building real applications</span></li>
+        <li><a href="https://github.com/Pandiyarajk/the_regex" target="_blank" rel="noopener">the_regex</a> — <span class="desc">regex mastery: guide, examples, quizzes, and mini projects</span></li>
+        <li><a href="https://github.com/Pandiyarajk/python-code-quality-workflows" target="_blank" rel="noopener">python-code-quality-workflows</a> — <span class="desc">Black, isort, Flake8, mypy, Bandit, and SonarQube integration guides</span></li>
+        <li><a href="https://github.com/Pandiyarajk/avrdude-usage-guide" target="_blank" rel="noopener">avrdude-usage-guide</a> — <span class="desc">practical AVRDUDE guide for flashing Arduino boards on Windows</span></li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>🛠️ Tech stack</h2>
+      <div class="stack-row"><strong>Languages:</strong> Python, C#, JavaScript/TypeScript, C++ (embedded/Arduino)</div>
+      <div class="stack-row"><strong>Testing:</strong> Selenium, Playwright, Behave (BDD), TestComplete, Ranorex, Allure, Postman</div>
+      <div class="stack-row"><strong>CI/CD &amp; DevOps:</strong> GitHub Actions, Jenkins, Docker</div>
+      <div class="stack-row"><strong>Data:</strong> Microsoft SQL Server, SQLite</div>
+      <div class="stack-row"><strong>AI tooling:</strong> Anthropic Claude, OpenAI APIs, MCP, RAG pipelines</div>
+    </section>
+
     <section class="section">
       <h2>📬 Contact</h2>
       <div class="contact-grid">
         <a href="mailto:pandiyarajk@live.com" class="contact-link">
-          <img src="https://img.shields.io/badge/Outlook-0078D4?style=for-the-badge&logo=microsoftoutlook&logoColor=white" alt="Email">
+          <img src="https://img.shields.io/badge/Email-0078D4?style=for-the-badge&logo=maildotru&logoColor=white" alt="Email">
         </a>
-        <a href="https://twitter.com/pandiyarajk" target="_blank" class="contact-link">
-          <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter">
+        <a href="https://github.com/Pandiyarajk" target="_blank" rel="noopener" class="contact-link">
+          <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
         </a>
-        <a href="https://linkedin.com/in/pandiyaraj-k-49353467" target="_blank" class="contact-link">
+        <a href="https://linkedin.com/in/pandiyaraj-k-49353467" target="_blank" rel="noopener" class="contact-link">
           <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
         </a>
-        <a href="https://pandiyarajk.github.io/" target="_blank" class="contact-link">
-          <img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" alt="Portfolio">
+        <a href="https://twitter.com/pandiyarajk" target="_blank" rel="noopener" class="contact-link">
+          <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=x&logoColor=white" alt="Twitter">
         </a>
       </div>
     </section>
 
-    <!-- Snake Animation Section -->
-    <section class="section">
-      <div class="snake-container">
-        <h3>Watch my contribution graph get eaten by the snake <span class="emoji">🐍</span></h3>
-        <img src="https://github.com/Pandiyarajk/Pandiyarajk/blob/output/github-snake.svg" alt="GitHub Contribution Snake">
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer">
-      <p>
-        Feel free to connect with me on LinkedIn or follow me on Twitter. <br>
-        I'm always open to discussing new ideas! <span class="emoji">💡</span>
-      </p>
+      <p>Open to conversations about test automation, engineering leadership, and AI-assisted development.</p>
     </footer>
+
   </div>
-
-  <script>
-    // Create animated particles
-    const particlesContainer = document.getElementById('particles');
-    for (let i = 0; i < 50; i++) {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 15 + 's';
-      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-      particlesContainer.appendChild(particle);
-    }
-
-    // Add intersection observer for scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(30px)';
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(section);
-    });
-
-    // Smooth scroll for better UX
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Add hover effect to stats
-    document.querySelectorAll('.stat-card').forEach(card => {
-      card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
-      });
-      card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-      });
-    });
-
-    // Console message for visitors
-    console.log('%c👋 Hi there, curious developer!', 'font-size: 20px; color: #667eea; font-weight: bold;');
-    console.log('%cThanks for checking out the source code!', 'font-size: 14px; color: #764ba2;');
-    console.log('%cFeel free to connect with me!', 'font-size: 14px; color: #667eea;');
-  </script>
 </body>
 </html>
